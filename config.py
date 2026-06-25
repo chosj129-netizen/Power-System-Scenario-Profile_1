@@ -1,0 +1,88 @@
+from __future__ import annotations
+
+
+DEFAULT_INPUT_DATA = {
+    "project_info": {
+        "project_name": "Demo Vessel",
+        "vessel_type": "Training Ship",
+        "revision": "v0.1",
+    },
+    "system_type": "conventional",
+    "scenarios": [
+        {
+            "name": "Harbour",
+            "duration_hr": 4.0,
+            "continuous_load_kw": 240.0,
+            "intermittent_load_kw": 40.0,
+            "aux_load_kw": 120.0,
+            "propulsion_load_kw": 0.0,
+            "ess_mode": "charge",
+            "ess_power_kw": 200.0,
+        },
+        {
+            "name": "Departure",
+            "duration_hr": 1.0,
+            "continuous_load_kw": 220.0,
+            "intermittent_load_kw": 80.0,
+            "aux_load_kw": 180.0,
+            "propulsion_load_kw": 900.0,
+            "ess_mode": "idle",
+            "ess_power_kw": 0.0,
+        },
+        {
+            "name": "Sea Going",
+            "duration_hr": 6.0,
+            "continuous_load_kw": 260.0,
+            "intermittent_load_kw": 60.0,
+            "aux_load_kw": 150.0,
+            "propulsion_load_kw": 1200.0,
+            "ess_mode": "discharge",
+            "ess_power_kw": 250.0,
+        },
+        {
+            "name": "DP",
+            "duration_hr": 2.0,
+            "continuous_load_kw": 240.0,
+            "intermittent_load_kw": 100.0,
+            "aux_load_kw": 220.0,
+            "propulsion_load_kw": 1000.0,
+            "ess_mode": "discharge",
+            "ess_power_kw": 300.0,
+        },
+        {
+            "name": "Arrival",
+            "duration_hr": 1.0,
+            "continuous_load_kw": 220.0,
+            "intermittent_load_kw": 70.0,
+            "aux_load_kw": 170.0,
+            "propulsion_load_kw": 850.0,
+            "ess_mode": "idle",
+            "ess_power_kw": 0.0,
+        },
+    ],
+    "generator_spec": {
+        "unit_rating_kw": 500.0,
+        "count_installed": 3,
+        "target_load_factor": 0.80,
+    },
+    "propulsion_spec": {
+        "motor_efficiency": 0.96,
+        "converter_efficiency": 0.98,
+        "propulsion_margin_factor": 1.00,
+    },
+    "ess_spec": {
+        "enabled": True,
+        "capacity_kwh": 1500.0,
+        "max_charge_kw": 700.0,
+        "max_discharge_kw": 700.0,
+        "soc_init": 0.80,
+        "soc_min": 0.20,
+        "soc_max": 0.95,
+        "charge_efficiency": 0.95,
+        "discharge_efficiency": 0.95,
+    },
+    "rules": {
+        "n_minus_1_check": True,
+        "reserve_margin_factor": 1.10,
+    },
+}
